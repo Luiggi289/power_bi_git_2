@@ -1,5 +1,5 @@
 {
-  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"type\":2,\"version\":\"5.59\"}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"type\":2,\"version\":\"5.59\"}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":0,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
   "layoutOptimization": 0,
   "resourcePackages": [
     {
@@ -36,13 +36,31 @@
           "z": 0.00
         },
         {
-          "config": "{\"name\":\"db0e0ded41c46f638027\",\"layouts\":[{\"id\":0,\"position\":{\"x\":138.59394629725793,\"y\":359.52092999882746,\"z\":1,\"width\":838.4247642339068,\"height\":279.9323271746596,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"fact_sale.transaction_date.Variación.Jerarquía de fechas.Mes\",\"active\":true},{\"queryRef\":\"fact_sale.transaction_date.Variación.Jerarquía de fechas.Día\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(fact_sale.sale_price)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"fact_sale\",\"Type\":0}],\"Select\":[{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Name\":\"Variación\",\"Property\":\"transaction_date\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Mes\"},\"Name\":\"fact_sale.transaction_date.Variación.Jerarquía de fechas.Mes\",\"NativeReferenceName\":\"transaction_date Mes\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Name\":\"Variación\",\"Property\":\"transaction_date\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Día\"},\"Name\":\"fact_sale.transaction_date.Variación.Jerarquía de fechas.Día\",\"NativeReferenceName\":\"transaction_date Día\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"sale_price\"}},\"Function\":0},\"Name\":\"Sum(fact_sale.sale_price)\",\"NativeReferenceName\":\"Suma de sale_price\"}]},\"drillFilterOtherVisuals\":true}}",
+          "config": "{\"name\":\"8647b9d13b0603d904c3\",\"layouts\":[{\"id\":0,\"position\":{\"x\":787.3604422184627,\"y\":303.2600211058812,\"z\":1002,\"width\":492.626007135798,\"height\":32.93321496172465,\"tabOrder\":1002}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"venta por estado\"}]}]}}]}}}",
+          "filters": "[]",
+          "height": 32.93,
+          "width": 492.63,
+          "x": 787.36,
+          "y": 303.26,
+          "z": 1002.00
+        },
+        {
+          "config": "{\"name\":\"9563c1c0efd0779d3297\",\"layouts\":[{\"id\":0,\"position\":{\"x\":777,\"y\":360,\"width\":503,\"height\":280,\"z\":1001,\"tabOrder\":1001}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Category\":[{\"queryRef\":\"fact_sale.status\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(fact_sale.sale_price)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"fact_sale\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"status\"},\"Name\":\"fact_sale.status\",\"NativeReferenceName\":\"status\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"sale_price\"}},\"Function\":0},\"Name\":\"Sum(fact_sale.sale_price)\",\"NativeReferenceName\":\"Suma de sale_price\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"sale_price\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 280.00,
+          "width": 503.00,
+          "x": 777.00,
+          "y": 360.00,
+          "z": 1001.00
+        },
+        {
+          "config": "{\"name\":\"db0e0ded41c46f638027\",\"layouts\":[{\"id\":0,\"position\":{\"x\":138.59394629725793,\"y\":359.52092999882746,\"z\":1000,\"width\":628.4755188529122,\"height\":279.9323271746596,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"fact_sale.transaction_date.Variación.Jerarquía de fechas.Mes\",\"active\":true},{\"queryRef\":\"fact_sale.transaction_date.Variación.Jerarquía de fechas.Día\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(fact_sale.sale_price)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"fact_sale\",\"Type\":0}],\"Select\":[{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Name\":\"Variación\",\"Property\":\"transaction_date\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Mes\"},\"Name\":\"fact_sale.transaction_date.Variación.Jerarquía de fechas.Mes\",\"NativeReferenceName\":\"transaction_date Mes\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Name\":\"Variación\",\"Property\":\"transaction_date\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Día\"},\"Name\":\"fact_sale.transaction_date.Variación.Jerarquía de fechas.Día\",\"NativeReferenceName\":\"transaction_date Día\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"sale_price\"}},\"Function\":0},\"Name\":\"Sum(fact_sale.sale_price)\",\"NativeReferenceName\":\"Suma de sale_price\"}]},\"drillFilterOtherVisuals\":true}}",
           "filters": "[]",
           "height": 279.93,
-          "width": 838.42,
+          "width": 628.48,
           "x": 138.59,
           "y": 359.52,
-          "z": 1.00
+          "z": 1000.00
         }
       ],
       "width": 1280.00
