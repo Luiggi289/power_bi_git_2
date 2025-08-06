@@ -1,0 +1,23 @@
+model Model
+	culture: es-ES
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-PE
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["fact_sale","dim_category","RangeStart","RangeEnd"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.145.1602.0 (25.07)+10647c9fa319b5e39936cdb21328038c371d1fe4
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table fact_sale
+ref table DateTableTemplate_eb951965-4d4a-473e-85e6-5b1f7c80a274
+ref table LocalDateTable_7ff636d8-95a0-4d52-bedd-9c9fd6838dce
+ref table dim_category
+
+ref cultureInfo es-ES
+

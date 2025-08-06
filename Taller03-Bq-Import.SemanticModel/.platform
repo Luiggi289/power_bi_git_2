@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Taller03-Bq-Import"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "74e0e770-0d27-4eb0-bca2-f848d3fbd8d6"
+  }
+}

@@ -1,0 +1,32 @@
+table dim_category
+	lineageTag: b07932fb-02f3-4099-a21d-ecc0f2d6f207
+
+	column id_category
+		dataType: int64
+		formatString: 0
+		lineageTag: 2e82e794-2a86-45a7-b2f8-7c85ed6139e1
+		summarizeBy: none
+		sourceColumn: id_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column category
+		dataType: string
+		lineageTag: 4fef27a2-70f6-474f-8af0-ec1376e6d328
+		summarizeBy: none
+		sourceColumn: category
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_category = m
+		mode: import
+		source =
+				let
+				    Origen = Value.NativeQuery(GoogleBigQuery.Database([CommandTimeout=#duration(60, 0, 0, 0), BillingProject="premium-guide-410714", ConnectionTimeout=#duration(60, 0, 0, 0)]){[Name="premium-guide-410714"]}[Data], "select * from datamart_ventas.dim_category", null, [EnableFolding=true])
+				in
+				    Origen
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

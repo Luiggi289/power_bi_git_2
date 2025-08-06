@@ -1,0 +1,9 @@
+relationship f29ced48-4476-4134-b478-c930a0a66121
+	joinOnDateBehavior: datePartOnly
+	fromColumn: fact_sale.transaction_date
+	toColumn: LocalDateTable_7ff636d8-95a0-4d52-bedd-9c9fd6838dce.Date
+
+relationship AutoDetected_0b46c753-98e6-4535-95c7-bb1805ab596b
+	fromColumn: fact_sale.id_category
+	toColumn: dim_category.id_category
+

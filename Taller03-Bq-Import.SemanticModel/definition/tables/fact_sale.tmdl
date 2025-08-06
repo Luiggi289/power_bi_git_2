@@ -1,0 +1,84 @@
+table fact_sale
+	lineageTag: 0e9c325f-c661-425b-a652-9d3a60924331
+
+	refreshPolicy
+		policyType: basic
+		rollingWindowGranularity: day
+		rollingWindowPeriods: 100
+		incrementalGranularity: day
+		incrementalPeriods: 15
+		sourceExpression =
+			let
+			    Origen = Value.NativeQuery(GoogleBigQuery.Database([CommandTimeout=#duration(60, 0, 0, 0), BillingProject="premium-guide-410714", ConnectionTimeout=#duration(60, 0, 0, 0)]){[Name="premium-guide-410714"]}[Data], "select * from datamart_ventas.fact_sales", null, [EnableFolding=true]),
+			    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"transaction_date", type datetime}}),
+			    #"Filas filtradas" = Table.SelectRows(#"Tipo cambiado", each [transaction_date] > RangeStart and [transaction_date] <= RangeEnd)
+			in
+			    #"Filas filtradas"
+
+	column status
+		dataType: string
+		lineageTag: 82a0edca-af30-42c3-b1b7-1bb4736361d4
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column transaction_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 7962cae8-38c9-4e9d-b7cc-0872d2e6bb26
+		summarizeBy: none
+		sourceColumn: transaction_date
+
+		variation Variación
+			isDefault
+			relationship: f29ced48-4476-4134-b478-c930a0a66121
+			defaultHierarchy: LocalDateTable_7ff636d8-95a0-4d52-bedd-9c9fd6838dce.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_category
+		dataType: int64
+		formatString: 0
+		lineageTag: fb7a947d-6132-4d4b-971b-f5328e0ce3aa
+		summarizeBy: none
+		sourceColumn: id_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column sale_price
+		dataType: double
+		lineageTag: c5c1303c-8163-46c4-908a-b3a6470d3d22
+		summarizeBy: sum
+		sourceColumn: sale_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column costo
+		dataType: double
+		lineageTag: d143546c-b9f9-41bb-9b02-6c61f8b59887
+		summarizeBy: sum
+		sourceColumn: costo
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fact_sale = m
+		mode: import
+		source =
+				let
+				    Origen = Value.NativeQuery(GoogleBigQuery.Database([CommandTimeout=#duration(60, 0, 0, 0), BillingProject="premium-guide-410714", ConnectionTimeout=#duration(60, 0, 0, 0)]){[Name="premium-guide-410714"]}[Data], "select * from datamart_ventas.fact_sales", null, [EnableFolding=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"transaction_date", type datetime}}),
+				    #"Filas filtradas" = Table.SelectRows(#"Tipo cambiado", each [transaction_date] > RangeStart and [transaction_date] <= RangeEnd)
+				in
+				    #"Filas filtradas"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_IsMQueryFoldable = True
+
+	annotation PBI_NavigationStepName = Navegación
+

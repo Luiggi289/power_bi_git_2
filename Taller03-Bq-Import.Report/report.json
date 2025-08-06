@@ -1,0 +1,51 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"type\":2,\"version\":\"5.59\"}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Página 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "36d12c98354e1f2fd881",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"550bb19edcf0f406eb07\",\"layouts\":[{\"id\":0,\"position\":{\"x\":138.59394629725793,\"y\":52.1442570227307,\"z\":0,\"width\":647.6865609139182,\"height\":279.9323271746596,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(fact_sale.sale_price)\"}],\"Category\":[{\"queryRef\":\"dim_category.category\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"fact_sale\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"dim_category\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"sale_price\"}},\"Function\":0},\"Name\":\"Sum(fact_sale.sale_price)\",\"NativeReferenceName\":\"Suma de sale_price\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"category\"},\"Name\":\"dim_category.category\",\"NativeReferenceName\":\"category\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"sale_price\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 279.93,
+          "width": 647.69,
+          "x": 138.59,
+          "y": 52.14,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"db0e0ded41c46f638027\",\"layouts\":[{\"id\":0,\"position\":{\"x\":138.59394629725793,\"y\":359.52092999882746,\"z\":1,\"width\":838.4247642339068,\"height\":279.9323271746596,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"fact_sale.transaction_date.Variación.Jerarquía de fechas.Mes\",\"active\":true},{\"queryRef\":\"fact_sale.transaction_date.Variación.Jerarquía de fechas.Día\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(fact_sale.sale_price)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"fact_sale\",\"Type\":0}],\"Select\":[{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Name\":\"Variación\",\"Property\":\"transaction_date\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Mes\"},\"Name\":\"fact_sale.transaction_date.Variación.Jerarquía de fechas.Mes\",\"NativeReferenceName\":\"transaction_date Mes\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Name\":\"Variación\",\"Property\":\"transaction_date\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Día\"},\"Name\":\"fact_sale.transaction_date.Variación.Jerarquía de fechas.Día\",\"NativeReferenceName\":\"transaction_date Día\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"sale_price\"}},\"Function\":0},\"Name\":\"Sum(fact_sale.sale_price)\",\"NativeReferenceName\":\"Suma de sale_price\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 279.93,
+          "width": 838.42,
+          "x": 138.59,
+          "y": 359.52,
+          "z": 1.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}
